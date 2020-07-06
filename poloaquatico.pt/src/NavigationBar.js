@@ -1,38 +1,63 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import ListGroup from "react-bootstrap/ListGroup";
 
 const NavigationBar = () => {
   return (
-    <Navbar
-      collapseOnSelect
-      fixed="top"
-      expand="md"
-      variant="dark"
-      bg="secondary"
-      className="text-uppercase"
+    <nav
+      className="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase"
+      id="mainNav"
     >
-      <Navbar.Brand href="#home">
-        <img
-          src="/logo.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt="Home"
-        />
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="nav navbar-nav ml-auto">
-          <Nav.Link href="#deets">Notícias</Nav.Link>
-          <Nav.Link href="#memes">Artigos</Nav.Link>
-          <Nav.Link href="#memes">Galeria</Nav.Link>
-          <Nav.Link href="#memes">Apostas</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      <div className="container">
+        <a className="navbar-brand js-scroll-trigger" href="#page-top">
+          Brand
+        </a>
+        <button
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          className="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i className="fa fa-bars" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarResponsive">
+          <ul className="nav navbar-nav ml-auto">
+            <li className="nav-item mx-0 mx-lg-1" role="presentation">
+              <a
+                className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#portfolio"
+              >
+                Notícias
+              </a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1" role="presentation">
+              <a
+                className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#portfolio"
+              >
+                Artigos
+              </a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1" role="presentation">
+              <a
+                className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#about"
+              >
+                Galeria
+              </a>
+            </li>
+            <li className="nav-item mx-0 mx-lg-1" role="presentation">
+              <a
+                className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#contact"
+              >
+                Apostas
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
