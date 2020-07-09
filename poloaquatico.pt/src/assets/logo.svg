@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>poloaquaticopt</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" stroke-opacity="0.6" stroke="#000000" fill="#FFD039" cx="100" cy="100" r="99.5"></circle>
+        <line x1="50" y1="30" x2="150" y2="30" id="Line" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="50" y1="170" x2="150" y2="170" id="Line" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <path d="M185,30 C161.666667,43.2460938 150,66.5794271 150,100 C150,148.472516 185,170.000395 185,170.000395" id="Path" stroke-opacity="0.6" stroke="#000000" transform="translate(167.500000, 100.000197) scale(-1, 1) translate(-167.500000, -100.000197) "></path>
+        <path d="M50,30 C26.6666667,41.7096354 15,65.0430346 15,100.000197 C15,151.897667 50,170 50,170" id="Path" stroke-opacity="0.598585009" stroke="#000000"></path>
+        <line x1="150" y1="170.5" x2="150" y2="185.5" id="Line-2" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="150" y1="14" x2="150" y2="29" id="Line-2" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="50" y1="170" x2="50" y2="186" id="Line-2" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="50" y1="14" x2="50" y2="30" id="Line-2" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="85" y1="29.6522486" x2="80.5" y2="3.5" id="Line-3" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="119.75" y1="197.228373" x2="115.080423" y2="170.090607" id="Line-3" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square"></line>
+        <line x1="119.562916" y1="29.0567107" x2="115.042256" y2="3.48959278" id="Line-4" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square" transform="translate(117.241629, 16.130212) rotate(20.007980) translate(-117.241629, -16.130212) "></line>
+        <line x1="84.7027476" y1="196.722217" x2="80.0079732" y2="170.170374" id="Line-4" stroke-opacity="0.6" stroke="#000000" stroke-linecap="square" transform="translate(82.355360, 183.446295) rotate(20.007980) translate(-82.355360, -183.446295) "></line>
+        <path d="M16,85.0456296 C16,85.0456296 43.0394261,69 100.29138,69 C138.45935,69 166.362223,74.3485432 184,85.0456296" id="Path-2" stroke-opacity="0.6" stroke="#000000" stroke-width="1.2"></path>
+        <path d="M16,131.04563 C16,131.04563 43.0394261,115 100.29138,115 C138.45935,115 166.362223,120.348543 184,131.04563" id="Path-2" stroke-opacity="0.6" stroke="#000000" stroke-width="1.2" transform="translate(100.000000, 123.022815) scale(1, -1) translate(-100.000000, -123.022815) "></path>
+        <text id="poloaquatico.pt" font-family="Raleway-SemiBold, Raleway" font-size="12" font-weight="500" fill="#0B0B14">
+            <tspan x="45.304" y="104">POLOAQUATICO.PT</tspan>
+        </text>
+    </g>
+</svg>

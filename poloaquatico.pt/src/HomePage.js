@@ -1,7 +1,0 @@
-import React from "react";
-// rafce
-const HomePage = () => {
-  return <div>hello</div>;
-};
-
-export default HomePage;

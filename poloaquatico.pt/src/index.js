@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import "jquery/dist/jquery";
+import "font-awesome/css/font-awesome.min.css";
+import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./style/main.css";
 
 ReactDOM.render(
   <React.StrictMode>
