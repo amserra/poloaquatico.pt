@@ -8,7 +8,7 @@ class NavigationBar extends Component {
   render() {
     return (
       <nav
-        className="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase"
+        className="navbar navbar-light navbar-expand-lg bg-secondary text-uppercase"
         id="mainNav"
       >
         <div className="container">
