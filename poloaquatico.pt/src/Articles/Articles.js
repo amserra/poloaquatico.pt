@@ -5,9 +5,9 @@ import "../style/articles.css";
 
 const Articles = () => {
   return (
-    <div class="articles-clean mt-5">
-      <div class="container">
-        <div class="row articles">
+    <div className="articles-clean mt-5">
+      <div className="container">
+        <div className="row articles">
           <ArticleCard file={cake} alt="cake"></ArticleCard>
           <ArticleCard file={cake} alt="cake"></ArticleCard>
           <ArticleCard file={cake} alt="cake"></ArticleCard>

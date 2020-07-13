@@ -2,21 +2,21 @@ import React from "react";
 
 const NewsCard = (props) => {
   return (
-    <div class="shadow col-sm-12 news-item p-4 m-2 mh-25">
-      <div class="row">
-        <div class="col-lg-4 col-md-5">
+    <div className="shadow col-sm-12 news-item p-4 m-2 mh-25">
+      <div className="row">
+        <div className="col-lg-4 col-md-5">
           <img
-            class="img-fluid rounded-lg"
+            className="img-fluid rounded-lg"
             id="img-news"
             style={{ maxHeight: 18 + "vh" }}
             src={props.file}
             alt={props.alt}
           />
         </div>
-        <div class="col">
-          <h3 class="name-news">Título noticia</h3>
-          <h6 class="text-secondary">Autor</h6>
-          <p class="news-description">
+        <div className="col">
+          <h3 className="name-news">Título noticia</h3>
+          <h6 className="text-secondary">Autor</h6>
+          <p className="news-description">
             Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus.
             Praesent aliquam in tellus eu gravida. Aenean tortor Aenean tortor
             est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam

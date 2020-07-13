@@ -2,6 +2,34 @@ html {
   overflow-y: scroll;
 }
 
+#mainNav {
+  text-transform: uppercase;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+#navbar-toggler {
+  outline: none;
+  border: 0;
+}
+
+.navbar-toggler-icon {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.rotate-hamburger {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  outline: 0;
+}
+
 #navbar-logo {
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);

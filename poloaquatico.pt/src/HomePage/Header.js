@@ -6,7 +6,7 @@ const Header = () => {
     <header className="masthead bg-primary text-white text-center pt-5">
       <div className="container">
         <Logo className="img-fluid d-block mx-auto mb-5"></Logo>
-        <h1>poloaquatico.pt</h1>
+        <h1 className="homePage-title">poloaquatico.pt</h1>
         <hr className="star-light" />
         <h2 className="font-weight-light mb-0">
           O melhor site sobre pólo aquático em Portugal!

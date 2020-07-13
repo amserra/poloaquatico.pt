@@ -1,0 +1,5 @@
+@media (max-width: 576px) {
+  .homePage-title {
+    font-size: 10vw !important;
+  }
+}
