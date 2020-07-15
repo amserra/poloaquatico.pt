@@ -79,3 +79,16 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.news-spinner {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.news-spinner-image {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}

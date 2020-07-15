@@ -7,6 +7,7 @@ import "font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/js/bootstrap";
 import "./style/bootstrap/bootstrap.min.css";
 import "./style/main.css";
+import "./style/transitions.css";
 
 ReactDOM.render(
   <React.StrictMode>

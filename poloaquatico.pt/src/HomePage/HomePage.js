@@ -8,7 +8,7 @@ import "../style/homePage.css";
 // rafce
 const HomePage = () => {
   return (
-    <div>
+    <div className="page">
       <Header></Header>
       <BestBetters></BestBetters>
       <About></About>

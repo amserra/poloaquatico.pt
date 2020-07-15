@@ -18,6 +18,18 @@ html {
   height: 2.5em;
 }
 
+#navbar-active {
+  color: #18bc9c !important;
+}
+
+.nav-link {
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: #d3d3d3 !important;
+}
+
 .rotate-hamburger {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);

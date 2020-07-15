@@ -3,7 +3,7 @@ import inConstruction from "../assets/paginaEmConstrucao.png";
 
 const Bets = () => {
   return (
-    <div>
+    <div className="page">
       <img
         className="img-fluid mx-auto d-block mt-5"
         src={inConstruction}

@@ -1,49 +1,55 @@
 import React from "react";
-import cake from "../assets/img/portfolio/cake.png";
-
+import Spinner from "react-bootstrap/Spinner";
 import "../style/news.css";
 import NewsCard from "./NewsCard";
+// Firebase
+import firebase from "firebase/app";
+import "firebase/firestore";
+import {
+  FirestoreProvider,
+  FirestoreCollection,
+} from "@react-firebase/firestore";
+import { config } from "../config/firebaseConfig";
+// import NewsLoadingCard from "./NewsLoadingCard";
 
 const News = () => {
   return (
-    <div className="news-horizontal mt-5">
-      <div className="container">
-        <div className="row news">
-          <NewsCard file={cake} alt="cake"></NewsCard>
-          <NewsCard file={cake} alt="cake"></NewsCard>
-          <NewsCard file={cake} alt="cake"></NewsCard>
-          <NewsCard file={cake} alt="cake"></NewsCard>
+    <FirestoreProvider {...config} firebase={firebase}>
+      <div className="news-horizontal mt-5 page">
+        <div className="container">
+          <div className="row news">
+            <FirestoreCollection path="news/" orderByKey>
+              {(res) => {
+                return res.isLoading ? (
+                  <Spinner
+                    animation="border"
+                    role="status"
+                    className="news-spinner"
+                  >
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : (
+                  res.value.map((elem, index) => (
+                    <NewsCard
+                      file={elem.image}
+                      key={index}
+                      id={index}
+                      title={elem.title}
+                      author={elem.author}
+                      content={elem.content}
+                      date={elem.date}
+                    ></NewsCard>
+                  ))
+                );
+              }}
+            </FirestoreCollection>
+          </div>
         </div>
       </div>
-      {/* <ul className="pagination justify-content-center">
-        <li className="page-item disabled">
-          <a className="page-link" href="#" tabindex="-1" aria-disabled="true">
-            Previous
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            1
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            2
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            3
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#">
-            Next
-          </a>
-        </li>
-      </ul> */}
-    </div>
+    </FirestoreProvider>
   );
 };
+
+// Falta pagination
 
 export default News;

@@ -10,6 +10,7 @@ class NavigationBar extends Component {
     clickedHome: false,
     expandedNav: false,
     transitionHamburger: false,
+    active: [false, false, false, false, false],
   };
 
   render() {
@@ -31,10 +32,12 @@ class NavigationBar extends Component {
                       clickedHome: true,
                       expandedNav: false,
                       transitionHamburger: "rotate-hamburger",
+                      active: [true, false, false, false, false],
                     })
                   : this.setState({
                       clickedHome: true,
                       expandedNav: false,
+                      active: [true, false, false, false, false],
                     })
               }
               onTransitionEnd={() => this.setState({ clickedHome: false })}
@@ -70,10 +73,12 @@ class NavigationBar extends Component {
               <Nav.Item className="py-lg-3 py-2 px-0 px-lg-3">
                 <Link
                   to="/noticias"
+                  id={this.state.active[1] ? "navbar-active" : undefined}
                   onClick={() =>
                     this.setState({
                       expandedNav: false,
                       transitionHamburger: "rotate-hamburger",
+                      active: [false, true, false, false, false],
                     })
                   }
                   className="nav-link text-white"
@@ -84,10 +89,12 @@ class NavigationBar extends Component {
               <Nav.Item className="py-lg-3 py-2 px-0 px-lg-3">
                 <Link
                   to="/artigos"
+                  id={this.state.active[2] ? "navbar-active" : undefined}
                   onClick={() =>
                     this.setState({
                       expandedNav: false,
                       transitionHamburger: "rotate-hamburger",
+                      active: [false, false, true, false, false],
                     })
                   }
                   className="nav-link text-white"
@@ -98,10 +105,12 @@ class NavigationBar extends Component {
               <Nav.Item className="py-lg-3 py-2 px-0 px-lg-3">
                 <Link
                   to="/galeria"
+                  id={this.state.active[3] ? "navbar-active" : undefined}
                   onClick={() =>
                     this.setState({
                       expandedNav: false,
                       transitionHamburger: "rotate-hamburger",
+                      active: [false, false, false, true, false],
                     })
                   }
                   className="nav-link text-white"
@@ -113,10 +122,12 @@ class NavigationBar extends Component {
               <Nav.Item className="py-lg-3 py-2 px-0 px-lg-3">
                 <Link
                   to="/apostas"
+                  id={this.state.active[4] ? "navbar-active" : undefined}
                   onClick={() =>
                     this.setState({
                       expandedNav: false,
                       transitionHamburger: "rotate-hamburger",
+                      active: [false, false, false, false, true],
                     })
                   }
                   className="nav-link text-white"

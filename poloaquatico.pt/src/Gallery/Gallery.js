@@ -7,11 +7,11 @@ import Card from "./Card";
 
 const Gallery = () => {
   return (
-    <div>
+    <div className="page">
       <Header></Header>
-      <section id="portfolio" class="portfolio galeria">
-        <div class="container">
-          <div class="row">
+      <section id="portfolio" className="portfolio galeria">
+        <div className="container">
+          <div className="row">
             <Card file={cake} alt="cake" number={1}></Card>
             <Card file={cabin} alt="cabin" number={2}></Card>
             <Card file={circus} alt="circus" number={3}></Card>
