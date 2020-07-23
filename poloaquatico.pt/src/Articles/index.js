@@ -15,7 +15,10 @@ const Articles = ({ firebase }) => {
       <div className="articles-clean mt-5 page">
         <div className="container">
           <div className="row articles">
-            <FirestoreCollection path="articles/">
+            <FirestoreCollection
+              path="articles/"
+              orderBy={[{ field: "date", type: "desc" }]}
+            >
               {(res) => {
                 return res.isLoading ? (
                   <Spinner
@@ -26,23 +29,19 @@ const Articles = ({ firebase }) => {
                     <span className="sr-only">Loading...</span>
                   </Spinner>
                 ) : (
-                  res.value
-                    .sort((a, b) => {
-                      if (a.date.toMillis() > b.date.toMillis()) return -1;
-                      if (a.date.toMillis() < b.date.toMillis()) return 1;
-                      return 0;
-                    })
-                    .map((elem, index) => (
-                      <ArticleCard
-                        file={elem.image}
-                        key={index}
-                        id={index}
-                        title={elem.title}
-                        author={elem.author}
-                        content={elem.content}
-                        date={elem.date}
-                      ></ArticleCard>
-                    ))
+                  res.value.map((elem, index) => (
+                    <ArticleCard
+                      documentId={res.ids[index]}
+                      key={index}
+                      id={index}
+                      file={elem.image}
+                      title={elem.title}
+                      author={elem.author}
+                      content={elem.content}
+                      date={elem.date}
+                      edited={elem.edited}
+                    ></ArticleCard>
+                  ))
                 );
               }}
             </FirestoreCollection>
@@ -52,5 +51,7 @@ const Articles = ({ firebase }) => {
     </FirestoreProvider>
   );
 };
+
+// Falta pagination
 
 export default withFirebase(Articles);

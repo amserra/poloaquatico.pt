@@ -8,13 +8,13 @@ const Annoucements = () => {
         <h2 className="text-uppercase text-center text-secondary">Anúncios</h2>
         <hr className="star-dark mb-5" />
         <h5 className="text-center font-weight-light">
-          Procuram-se colaboradores!
-        </h5>
-        <h5 className="text-center font-weight-light">
-          Aceitam-se sugestões de melhoria e de novas funcionalidades.
-        </h5>
-        <h5 className="text-center font-weight-light">
-          Contacte-nos através do formulário abaixo.
+          <p>Procuram-se colaboradores para lançar notícias e artigos.</p>
+          <p>Envie-nos as suas melhores fotografias!</p>
+          <p>
+            Aceitam-se sugestões de melhoria e de novas funcionalidades, assim
+            como reportar de erros.
+          </p>
+          <p>Contacte-nos através do formulário abaixo!</p>
         </h5>
       </Container>
     </section>

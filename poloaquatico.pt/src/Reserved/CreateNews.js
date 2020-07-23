@@ -20,6 +20,7 @@ class CreateNews extends Component {
       uploadFeedback: "",
       filename: "",
       finish: false,
+      redirect: false,
     };
 
     this.firebase = props.firebase;
@@ -83,6 +84,8 @@ class CreateNews extends Component {
   };
 
   render() {
+    if (this.state.redirect) return <Redirect to="/noticias"></Redirect>;
+
     return (
       <AuthUserContext.Consumer>
         {(authUser) =>
@@ -177,7 +180,7 @@ class CreateNews extends Component {
 
               <Modal
                 show={this.state.finish}
-                onHide={() => this.setState({ finish: false })}
+                onHide={() => this.setState({ finish: false, redirect: true })}
                 backdrop="static"
                 keyboard={false}
               >
@@ -192,7 +195,9 @@ class CreateNews extends Component {
                 <Modal.Footer>
                   <Button
                     variant="primary"
-                    onClick={() => this.setState({ finish: false })}
+                    onClick={() =>
+                      this.setState({ finish: false, redirect: true })
+                    }
                   >
                     Ok
                   </Button>

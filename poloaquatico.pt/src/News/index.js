@@ -16,7 +16,10 @@ const News = ({ firebase }) => {
       <div className="news-horizontal mt-5 page">
         <div className="container">
           <div className="row news">
-            <FirestoreCollection path="news/" orderByKey>
+            <FirestoreCollection
+              path="news/"
+              orderBy={[{ field: "date", type: "desc" }]}
+            >
               {(res) => {
                 return res.isLoading ? (
                   <Spinner
@@ -27,23 +30,19 @@ const News = ({ firebase }) => {
                     <span className="sr-only">Loading...</span>
                   </Spinner>
                 ) : (
-                  res.value
-                    .sort((a, b) => {
-                      if (a.date.toMillis() > b.date.toMillis()) return -1;
-                      if (a.date.toMillis() < b.date.toMillis()) return 1;
-                      return 0;
-                    })
-                    .map((elem, index) => (
-                      <NewsCard
-                        file={elem.image}
-                        key={index}
-                        id={index}
-                        title={elem.title}
-                        author={elem.author}
-                        content={elem.content}
-                        date={elem.date}
-                      ></NewsCard>
-                    ))
+                  res.value.map((elem, index) => (
+                    <NewsCard
+                      documentId={res.ids[index]}
+                      key={index}
+                      id={index}
+                      file={elem.image}
+                      title={elem.title}
+                      author={elem.author}
+                      content={elem.content}
+                      date={elem.date}
+                      edited={elem.edited}
+                    ></NewsCard>
+                  ))
                 );
               }}
             </FirestoreCollection>

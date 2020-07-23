@@ -11,7 +11,7 @@ const Donations = () => {
       </h3>
       <h3 className="font-weight-light text-left mt-2">
         As doações servem para apoiar este projeto. De uma forma transparente,
-        estas serão alocadas aos seguintes pontos:
+        estas serão alocadas nos seguintes recursos:
       </h3>
       <h4 className="font-weight-light text-left mt-4">
         <ul>
@@ -25,6 +25,7 @@ const Donations = () => {
             Incentivo ao criador do projeto para continuar a introduzir
             melhorias e novas funcionalidades
           </li>
+          <li>Prémios para os melhores apostadores</li>
         </ul>
       </h4>
       <h3 className="font-weight-light text-left mt-2">

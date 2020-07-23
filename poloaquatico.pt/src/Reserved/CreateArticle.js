@@ -20,6 +20,7 @@ class CreateArticle extends Component {
       uploadFeedback: "",
       filename: "",
       finish: false,
+      redirect: false,
     };
 
     this.firebase = props.firebase;
@@ -83,6 +84,7 @@ class CreateArticle extends Component {
   };
 
   render() {
+    if (this.state.redirect) return <Redirect to="/artigos"></Redirect>;
     return (
       <AuthUserContext.Consumer>
         {(authUser) =>
@@ -177,7 +179,7 @@ class CreateArticle extends Component {
 
               <Modal
                 show={this.state.finish}
-                onHide={() => this.setState({ finish: false })}
+                onHide={() => this.setState({ finish: false, redirect: true })}
                 backdrop="static"
                 keyboard={false}
               >
@@ -192,7 +194,9 @@ class CreateArticle extends Component {
                 <Modal.Footer>
                   <Button
                     variant="primary"
-                    onClick={() => this.setState({ finish: false })}
+                    onClick={() =>
+                      this.setState({ finish: false, redirect: true })
+                    }
                   >
                     Ok
                   </Button>

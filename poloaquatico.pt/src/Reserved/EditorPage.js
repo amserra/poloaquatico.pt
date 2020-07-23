@@ -29,7 +29,9 @@ const EditorPage = (props) => {
             </Row>
             <Row className="justify-content-md-center text-center">
               <Col xs lg="2" className="mt-5">
-                <Button>Editar notícia</Button>
+                <Link to="/noticias">
+                  <Button>Editar notícia</Button>
+                </Link>
               </Col>
               <Col xs lg="2" className="mt-5">
                 <Link to="/artigos">

@@ -156,7 +156,7 @@ class NavigationBar extends Component {
                     to="/doacoes"
                     active={this.state.active[6]}
                     clickHandler={() => this.clickHandler(6)}
-                    name="Doar"
+                    name="Apoiar"
                   ></NavigationLink>
 
                   {authUser && (

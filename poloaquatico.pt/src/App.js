@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import HomePage from "./HomePage/HomePage";
+import HomePage from "./HomePage";
 import NavigationBar from "./Layout/NavigationBar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Articles from "./Articles";
 import ArticleDetails from "./Articles/ArticleDetails";
 import News from "./News";
 import NewsDetails from "./News/NewsDetails";
-import Gallery from "./Gallery/Gallery";
+import Gallery from "./Gallery";
 import Bets from "./Bets/Bets";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Page404 from "./Layout/Page404";
@@ -19,6 +19,7 @@ import EditorPage from "./Reserved/EditorPage";
 import EditArticle from "./Reserved/EditArticle";
 import CreateAccount from "./Reserved/Admin/CreateAccount";
 import { withAuthentication } from "./Session";
+import EditNews from "./Reserved/EditNews";
 
 class App extends Component {
   render() {
@@ -58,6 +59,11 @@ class App extends Component {
                     exact
                     path="/criador/criarNoticia"
                     component={CreateNews}
+                  ></Route>
+                  <Route
+                    exact
+                    path="/criador/editarNoticia"
+                    component={EditNews}
                   ></Route>
                   <Route
                     exact

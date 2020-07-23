@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 import { AuthUserContext } from "../Session";
 import { withFirebase } from "../Firebase";
 
-class EditArticle extends Component {
+class EditNews extends Component {
   constructor(props) {
     super(props);
     this.previousTitle = props.location.state.title;
@@ -41,7 +41,7 @@ class EditArticle extends Component {
     if (form.checkValidity()) {
       if (this.state.filename === this.previousUrl) {
         var db = this.firebase.firestore;
-        db.collection("articles")
+        db.collection("news")
           .doc(this.documentId)
           .update({
             content: this.content.current.value,
@@ -55,12 +55,12 @@ class EditArticle extends Component {
           });
       } else {
         this.firebase.storage
-          .ref("articles")
+          .ref("news")
           .child(this.state.filename)
           .getDownloadURL()
           .then((url) => {
             var db = this.firebase.firestore;
-            db.collection("articles")
+            db.collection("news")
               .doc(this.documentId)
               .update({
                 content: this.content.current.value,
@@ -89,7 +89,7 @@ class EditArticle extends Component {
   };
 
   render() {
-    if (this.state.close) return <Redirect to="/artigos"></Redirect>;
+    if (this.state.close) return <Redirect to="/noticias"></Redirect>;
     return (
       <AuthUserContext.Consumer>
         {(authUser) =>
@@ -98,7 +98,7 @@ class EditArticle extends Component {
               className="page mt-5"
               style={{ fontFamily: "Sans-Serif" }}
             >
-              <h2 className="font-weight-normal text-center">Editar artigo</h2>
+              <h2 className="font-weight-normal text-center">Editar notícia</h2>
               <Form
                 noValidate
                 validated={this.state.validated}
@@ -125,7 +125,7 @@ class EditArticle extends Component {
                     name="avatar"
                     randomizeFilename
                     metadata={{ cacheControl: "max-age=3600" }}
-                    storageRef={this.firebase.storage.ref("articles")}
+                    storageRef={this.firebase.storage.ref("news")}
                     onUploadStart={() =>
                       this.setState({
                         hasFile: true,
@@ -186,7 +186,7 @@ class EditArticle extends Component {
                   closeButton
                   style={{ outline: "none" }}
                 ></Modal.Header>
-                <Modal.Body>Artigo atualizado com sucesso.</Modal.Body>
+                <Modal.Body>Notícia atualizado com sucesso.</Modal.Body>
                 <Modal.Footer>
                   <Button
                     variant="primary"
@@ -208,4 +208,4 @@ class EditArticle extends Component {
   }
 }
 
-export default withFirebase(EditArticle);
+export default withFirebase(EditNews);

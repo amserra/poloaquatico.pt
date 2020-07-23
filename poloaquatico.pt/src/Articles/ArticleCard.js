@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Spinner from "react-bootstrap/Spinner";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { ReactComponent as EditIcon } from "../assets/edit-solid.svg";
+import { ReactComponent as DeleteIcon } from "../assets/trash-solid.svg";
 // Firebase
 import { withFirebase } from "../Firebase";
 import { AuthUserContext } from "../Session";
+import Delete from "../Reserved/DeleteDocument";
 
 class ArticleCard extends Component {
-  state = { url: null };
+  state = { url: null, showModalDelete: false };
 
   transformDate = (date) => {
     var m;
@@ -65,8 +68,9 @@ class ArticleCard extends Component {
       this.setState({ url });
     });
   };
+
   render() {
-    const { title, author, date, content, id } = this.props;
+    const { title, author, date, content, id, documentId, edited } = this.props;
 
     return (
       <AuthUserContext.Consumer>
@@ -104,6 +108,7 @@ class ArticleCard extends Component {
               }}
             >
               {this.transformDate(date.toDate())}
+              {edited && " (editado)"}
             </h6>
             <p className="articles-description">{content}</p>
             <Link
@@ -127,13 +132,37 @@ class ArticleCard extends Component {
                   <Link
                     to={{
                       pathname: "/criador/editarArtigo",
-                      state: { title, content, url: this.state.url },
+                      state: {
+                        title,
+                        content,
+                        url: this.state.url,
+                        documentId,
+                      },
                     }}
                   >
                     <EditIcon className="ml-3 pt-3" width="20"></EditIcon>
                   </Link>
                 )
               : null}
+            {authUser
+              ? authUser.displayName === author && (
+                  <Button
+                    onClick={() => this.setState({ showModalDelete: true })}
+                    variant="link"
+                    style={{ borderWidth: 0, padding: 0 }}
+                  >
+                    <DeleteIcon className="ml-3 pt-3" width="15"></DeleteIcon>
+                  </Button>
+                )
+              : null}
+            <Delete
+              show={this.state.showModalDelete}
+              handleClose={() => this.setState({ showModalDelete: false })}
+              msg={`Tem a certeza que quer eliminar este artigo com o título "${title}" ?`}
+              collection="articles"
+              documentId={documentId}
+              url={this.state.url}
+            ></Delete>
           </div>
         )}
       </AuthUserContext.Consumer>

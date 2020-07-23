@@ -9,25 +9,30 @@ const ArticleDetails = (props) => {
     var text = content;
 
     const slice = (number) => {
+      const firstBreakpoint = 600;
+      const secondBreakpoint = 2000;
       if (number === 1) {
-        if (content.length < 500) return text;
+        if (content.length < firstBreakpoint) return text;
         else {
-          const index = text.indexOf(". ", 500) + 2;
+          const index = text.indexOf(". ", firstBreakpoint) + 2;
           const v = text.substr(0, index);
           text = text.substr(index, text.length);
           return v;
         }
       } else if (number === 2) {
-        if (content.length > 500) {
-          const half = text.length / 2;
-          const index = text.indexOf(". ", half) + 2;
-          const v = text.substr(0, index);
-          text = text.substr(index, text.length);
-          return v;
+        if (content.length >= firstBreakpoint) {
+          if (content.length < secondBreakpoint) return text;
+          else {
+            const half = text.length / 2;
+            const index = text.indexOf(". ", half) + 2;
+            const v = text.substr(0, index);
+            text = text.substr(index, text.length);
+            return v;
+          }
         }
       } else if (number === 3) {
-        if (content.length > 500) {
-          return text;
+        if (content.length >= firstBreakpoint) {
+          if (content.length >= secondBreakpoint) return text;
         }
       }
     };

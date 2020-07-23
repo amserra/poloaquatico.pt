@@ -8,7 +8,11 @@ const Header = () => {
         <hr className="star-dark mb-5"></hr>
         <h2 className="font-weight-light mb-0">
           Este espaço é dedicado às melhores fotografias enviadas pelos nossos
-          seguidores
+          seguidores (enviar para{" "}
+          <a href="mailto:poloaquatico.pt@gmail.com">
+            poloaquatico.pt@gmail.com
+          </a>
+          )
         </h2>
       </div>
     </header>
