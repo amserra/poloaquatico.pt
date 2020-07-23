@@ -1,25 +1,53 @@
 import React from "react";
-import cake from "../assets/img/portfolio/cake.png";
-import cabin from "../assets/img/portfolio/cabin.png";
-import circus from "../assets/img/portfolio/circus.png";
 import Header from "./Header";
-import Card from "./Card";
+import GalleryCard from "./GalleryCard";
+import Spinner from "react-bootstrap/Spinner";
+import "../style/gallery.css";
+// Firebase
+import {
+  FirestoreProvider,
+  FirestoreCollection,
+} from "@react-firebase/firestore";
+import { withFirebase } from "../Firebase";
 
-const Gallery = () => {
+const Gallery = (props) => {
   return (
-    <div className="page">
-      <Header></Header>
-      <section id="portfolio" className="portfolio galeria">
-        <div className="container">
-          <div className="row">
-            <Card file={cake} alt="cake" number={1}></Card>
-            <Card file={cabin} alt="cabin" number={2}></Card>
-            <Card file={circus} alt="circus" number={3}></Card>
+    <FirestoreProvider firebase={props.firebase.fb}>
+      <div className="page">
+        <Header></Header>
+        <section id="portfolio" className="portfolio galeria">
+          <div className="container">
+            <div className="row">
+              <FirestoreCollection path="gallery/" orderByKey>
+                {(res) => {
+                  return res.isLoading ? (
+                    <Spinner
+                      animation="border"
+                      role="status"
+                      className="news-spinner"
+                    >
+                      <span className="sr-only">Loading...</span>
+                    </Spinner>
+                  ) : (
+                    res.value.map((elem, index) => (
+                      <GalleryCard
+                        file={elem.image}
+                        key={index}
+                        id={index}
+                        author={elem.author}
+                        description={elem.description}
+                        date={elem.date}
+                      ></GalleryCard>
+                    ))
+                  );
+                }}
+              </FirestoreCollection>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </FirestoreProvider>
   );
 };
 
-export default Gallery;
+export default withFirebase(Gallery);

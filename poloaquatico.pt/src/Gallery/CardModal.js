@@ -1,43 +1,26 @@
 import React from "react";
+import Modal from "react-bootstrap/Modal";
 
 const CardModal = (props) => {
   return (
-    <div
-      className="modal text-center"
-      role="dialog"
-      tabIndex="-1"
-      id={`modal-${props.number}`}
-    >
-      <div className="modal-dialog modal-lg" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <button
-              type="button"
-              className="close"
-              id="close-modal"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            <div className="container text-center">
-              <div className="row">
-                <div className="col-lg-8 mx-auto">
-                  <img
-                    className="img-fluid mb-5"
-                    src={props.file}
-                    alt={props.alt}
-                  />
-                  <p className="mb-5">Descrição(autor, etc)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Modal {...props} size="lg" centered>
+      <Modal.Header closeButton>
+        <Modal.Title className="gallery-modal-title">
+          {props.description}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <img
+          className="img-fluid rounded-lg mx-auto d-block"
+          src={props.file}
+          alt=""
+        />
+      </Modal.Body>
+      <Modal.Footer
+        className="gallery-modal-footer"
+        style={{ paddingTop: 0 }}
+      >{`Enviada por ${props.author} a ${props.date}`}</Modal.Footer>
+    </Modal>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import firebase from "@firebase/app";
-import "@firebase/storage";
 import { Spinner } from "react-bootstrap";
 
 class NewsCard extends Component {
@@ -82,7 +81,8 @@ class NewsCard extends Component {
               className="img-fluid rounded-lg"
               id="img-news"
               style={{
-                maxHeight: 18 + "vh",
+                maxHeight: 21 + "vh",
+                width: 100 + "%",
                 display: this.state.url ? "initial" : "none",
               }}
               src={this.state.url}

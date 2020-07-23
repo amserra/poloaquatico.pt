@@ -8,11 +8,14 @@ import "bootstrap/dist/js/bootstrap";
 import "./style/bootstrap/bootstrap.min.css";
 import "./style/main.css";
 import "./style/transitions.css";
+import Firebase, { FirebaseContext } from "./Firebase";
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <FirebaseContext.Provider value={new Firebase()}>
     <App />
-  </React.StrictMode>,
+  </FirebaseContext.Provider>,
+  // </React.StrictMode>
   document.getElementById("root")
 );
 

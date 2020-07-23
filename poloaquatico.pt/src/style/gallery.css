@@ -1,0 +1,16 @@
+.gallery-spinner-image {
+  color: black;
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+}
+
+@media (min-width: 992px) {
+  .gallery-modal-footer {
+    padding-right: 3rem !important;
+  }
+  .gallery-modal-title {
+    line-height: 2;
+    padding-left: 2.2rem;
+  }
+}

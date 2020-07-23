@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import BestBetters from "./BestBetters";
+import Annoucements from "./Annoucements";
 import About from "./About";
 import ContactForm from "./ContactForm";
 import Footer from "../Layout/Footer";
@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className="page">
       <Header></Header>
-      <BestBetters></BestBetters>
+      <Annoucements></Annoucements>
       <About></About>
       <ContactForm></ContactForm>
       <Footer></Footer>
