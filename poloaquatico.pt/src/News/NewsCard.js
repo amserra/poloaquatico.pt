@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import firebase from "@firebase/app";
 import Spinner from "react-bootstrap/Spinner";
+import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import { ReactComponent as EditIcon } from "../assets/edit-solid.svg";
 import { ReactComponent as DeleteIcon } from "../assets/trash-solid.svg";
@@ -86,7 +87,7 @@ class NewsCard extends Component {
                     className="news-spinner-image"
                   ></Spinner>
                 )}
-                <img
+                {/* <img
                   className="img-fluid rounded-lg"
                   id="img-news"
                   style={{
@@ -96,7 +97,13 @@ class NewsCard extends Component {
                   }}
                   src={this.state.url}
                   alt=""
-                />
+                /> */}
+                <Image
+                  src={this.state.url}
+                  fluid
+                  style={{ display: this.state.url ? "initial" : "none" }}
+                  className="mx-auto d-block"
+                ></Image>
               </div>
               <div className="col">
                 <h3 className="name-news">{title}</h3>

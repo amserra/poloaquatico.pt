@@ -22,13 +22,6 @@ const About = () => {
             </p>
           </div>
         </div>
-
-        {/* pode ser para doar? <div className="text-center mt-4">
-            <a className="btn btn-outline-light btn-xl" role="button" href="#">
-              <i className="fa fa-download mr-2" />
-              <span>Download Now!</span>
-            </a>
-          </div> */}
       </div>
     </section>
   );

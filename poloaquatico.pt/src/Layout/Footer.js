@@ -9,13 +9,13 @@ const Footer = () => {
             <h4 className="text-uppercase">Redes sociais</h4>
             <ul className="list-inline">
               <li className="list-inline-item">
-                {/* <a
+                <a
                   className="btn btn-outline-light btn-social text-center rounded-circle"
                   role="button"
-                  href="#"
+                  href="https://www.facebook.com/poloaquaticopt-116284603512079"
                 >
                   <i className="fa fa-facebook fa-fw" />
-                </a> */}
+                </a>
               </li>
             </ul>
           </div>

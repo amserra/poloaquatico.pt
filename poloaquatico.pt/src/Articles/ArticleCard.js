@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 import { ReactComponent as EditIcon } from "../assets/edit-solid.svg";
 import { ReactComponent as DeleteIcon } from "../assets/trash-solid.svg";
@@ -83,7 +84,7 @@ class ArticleCard extends Component {
                 className="news-spinner-image"
               ></Spinner>
             )}
-            <img
+            {/* <img
               className="img-fluid rounded-lg articles-img"
               id="img-news"
               style={{
@@ -93,7 +94,13 @@ class ArticleCard extends Component {
               }}
               src={this.state.url}
               alt=""
-            />
+            /> */}
+            <Image
+              src={this.state.url}
+              fluid
+              style={{ display: this.state.url ? "initial" : "none" }}
+              className="mx-auto d-block"
+            ></Image>
             <h3 className="articles-name">{title}</h3>
             <h6 className="text-secondary" style={{ display: "inline" }}>
               {author} ·
